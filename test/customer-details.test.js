@@ -7,5 +7,4 @@ describe('customer details', () => {
   //I have to write test cases here.
   //new test
   //again test
-  //new commit
 });
