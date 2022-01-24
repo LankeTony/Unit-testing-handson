@@ -11,4 +11,24 @@ describe('BasicDetails.js', () => {
     form[0].click();
     expect(abc.calledOnce).to.be.false;
   });
+
+   it('check accessible', () => {
+    expect(el).to.be.accessible;
+  });
+
+   it('check for capture', () => {
+    const fun = Sinon.spy(el, "_captureDetails");
+    form[1].click();
+    expect(fun.calledOnce).to.be.true;
+  });
+
+    it('number to words', () => {
+    const val = 10005;
+    let num = 10005;
+    // const func = el._numToWord(val,num);
+    el._numToWord(val, num);
+    //console.log(func);
+    expect(num).to.equal(10005.00);
+  });
+
  });
