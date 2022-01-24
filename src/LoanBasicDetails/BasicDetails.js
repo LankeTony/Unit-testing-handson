@@ -219,6 +219,9 @@ export class BasicDetails extends LocalizeMixin(LitElement) {
     const _amount = this.shadowRoot.querySelector('.amount').value;
     const _period = this.shadowRoot.querySelector('.period').value;
 
+    console.log("_amount.........");
+    console.log(_amount);
+
     if (parseFloat(_amount.replace(/,/g, '')) < 10000) {
       // alert('Amount should not be less than 10000');
       this.shadowRoot.querySelector('.amount').classList.add('e-handle');
@@ -232,6 +235,8 @@ export class BasicDetails extends LocalizeMixin(LitElement) {
     const basic = { name: _name, amount: _amount, period: _period };
     // eslint-disable-next-line no-console
     console.log(basic);
+    console.log("basic.amount....");
+    console.log(basic.amount);
     // e.preventDefault();
 
     fetch('https://loanfeapi.herokuapp.com/calculate-emi', {
