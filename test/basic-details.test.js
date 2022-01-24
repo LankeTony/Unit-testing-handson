@@ -4,8 +4,19 @@ import Sinon from 'sinon';
 
 const el = await fixture(html`<basic-details></basic-details>`);
 const form = el.shadowRoot.querySelectorAll('lion-button');
+const amount = el.shadowRoot.querySelector('lion-input-amount').querySelectorAll('.validators');
+
+
 describe('BasicDetails.js', () => {
   //const basicDetail = new BasicDetails();
+
+  	it('should be greater than 10000', () => {
+  			const testOne = amount;
+  			console.log(amount)
+  			expect(testOne).to.equal(10000);
+  			
+  	});
+
   it('check for spy', () => {
     const abc = Sinon.spy(el, "_toDashboard");
     form[0].click();
