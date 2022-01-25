@@ -16,4 +16,22 @@ describe('loan-header', () => {
 it('check accessible', () => {
   expect(el).to.be.accessible;
 });
+
+
+it('check for spy', async() => {
+  form[0].click();
+  expect(form[0]).to.have.class('bg-btn-color');
+});
+
+it('check for the color change of button', async() => {
+  form[0].click();
+  expect(form[1]).to.have.class('btn-cursor');
+});
+
+it('check for the color change of button', async() => {
+  form[1].click();
+  expect(form[1]).to.have.class('bg-btn-color');
+});
+
+
 });
